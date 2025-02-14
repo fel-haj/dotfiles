@@ -3,7 +3,7 @@ command_timeout = 1000
 palette = "catppuccin_mocha"
 
 format = """
- [](overlay0)\
+  [](overlay0)\
 $os\
 $username\
 [](bg:blue fg:overlay0)\

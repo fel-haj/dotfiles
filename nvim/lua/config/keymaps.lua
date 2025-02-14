@@ -9,5 +9,7 @@ vim.api.nvim_set_keymap("n", "<C-b>", ":bd<enter>", {noremap=false})
 vim.keymap.set({'n', 'v'}, '<C-y>', '"+y', {noremap=true})
 -- code-suggestions
 vim.api.nvim_set_keymap('i', '<C-j>', '<CR>', { noremap = false })
+vim.api.nvim_set_keymap('i', '<C-h>', '<BS>', { noremap = false })
 vim.api.nvim_set_keymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
 vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
+

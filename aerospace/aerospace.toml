@@ -12,7 +12,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -52,6 +52,14 @@ if.app-name-regex-substring = 'arc'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'discord'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'docker'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
@@ -62,18 +70,23 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-name-regex-substring = 'calendar'
 run = 'layout floating'
+ 
+[[on-window-detected]]
+if.app-name-regex-substring = 'contacts'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'textedit'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'discord'
+if.app-name-regex-substring = 'reminders'
 run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'notes'
 run = 'layout floating'
+
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -116,28 +129,21 @@ outer.right =      0
 
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-alt-shift-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
-alt-shift-m = 'exec-and-forget open -a /System/Applications/Mail.app'
-alt-shift-c = 'exec-and-forget open -a /System/Applications/Calendar.app'
-alt-shift-n = 'exec-and-forget open -a /System/Applications/Notes.app'
-alt-shift-o = 'exec-and-forget open ~/Downloads'
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-shift-h = 'focus left'
-cmd-shift-j = 'focus down'
-cmd-shift-k = 'focus up'
-cmd-shift-l = 'focus right'
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-# alt-shift-h = 'move left'
-# alt-shift-j = 'move down'
-# alt-shift-k = 'move up'
-# alt-shift-l = 'move right'
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
@@ -148,12 +154,14 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -164,7 +172,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+cmd-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -185,3 +193,11 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
+b = ['exec-and-forget osascript ~/Development/util/scripts/appleScript/theme.scpt', 'mode main']
+t = ['exec-and-forget open -a /Applications/Microsoft\ Teams.app', 'mode main']
+m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
+c = ['exec-and-forget open -a /System/Applications/Calendar.app', 'mode main']
+n = ['exec-and-forget open -a /System/Applications/Notes.app', 'mode main']
+o = ['exec-and-forget open ~/Downloads', 'mode main']

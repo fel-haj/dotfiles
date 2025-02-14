@@ -18,6 +18,7 @@ return {
           'lua',
           'nix',
           'python',
+          'terraform',
           'toml',
           'tsx',
           'typescript',

@@ -129,6 +129,7 @@ style = "bg:overlay0 fg:#ffffff"
 
 [os.symbols]
 Macos = "  "
+NixOS = " "
 
 [package]
 symbol = "󰏗 "

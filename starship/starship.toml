@@ -132,6 +132,7 @@ Macos = "  "
 NixOS = " "
 
 [package]
+disabled = true
 symbol = "󰏗 "
 
 [perl]
@@ -160,6 +161,9 @@ symbol = " "
 
 [swift]
 symbol = " "
+
+[terraform]
+symbol = " "
 
 [username]
 format = "[ $user ]($style)"

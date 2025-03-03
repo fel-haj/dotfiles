@@ -195,7 +195,13 @@ up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-b = ['exec-and-forget osascript ~/Development/util/scripts/appleScript/theme.scpt', 'mode main']
+b = '''exec-and-forget osascript -e '
+tell application "System Events"
+  tell appearance preferences
+    set dark mode to not dark mode
+   end tell
+ end tell'
+'''
 t = ['exec-and-forget open -a /Applications/Microsoft\ Teams.app', 'mode main']
 m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
 c = ['exec-and-forget open -a /System/Applications/Calendar.app', 'mode main']

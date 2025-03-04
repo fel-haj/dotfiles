@@ -24,11 +24,14 @@ symbol = " "
 symbol = " "
 
 [character]
-success_symbol = "[](bold #32cd32)"
+success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
 
 [cmake]
 symbol = " "
+
+[cmd_duration]
+disabled = true
 
 [conda]
 symbol = " "
@@ -40,7 +43,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-format = "[ $path ]($style)"
+format = "[ $path]($style)"
 read_only = " 󰌾"
 style = "bg:blue fg:base"
 truncation_length = 1
@@ -66,12 +69,14 @@ symbol = " "
 symbol = " "
 
 [git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
 
 [git_commit]
 tag_symbol = "  "
 
 [golang]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [gradle]
@@ -114,9 +119,12 @@ symbol = "󰔷 "
 symbol = "󰆥 "
 
 [nix_shell]
+format = 'in [$symbol$state( \($name\))]($style) '
 symbol = " "
+heuristic = true
 
 [nodejs]
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [ocaml]
@@ -179,7 +187,7 @@ base = "#1e1e2e"
 blue = "#89b4fa"
 crust = "#11111b"
 flamingo = "#f2cdcd"
-green = "#a6e3a1"
+green = "#32cd32"
 lavender = "#b4befe"
 mantle = "#181825"
 maroon = "#eba0ac"
